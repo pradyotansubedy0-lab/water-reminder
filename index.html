@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mr. Subedee's Daily Water Hydration 💧</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ======================================
+         BACKGROUND BUBBLES
+    ======================================= -->
+
+    <div class="bubble bubble-one"></div>
+
+    <div class="bubble bubble-two"></div>
+
+    <div class="bubble bubble-three"></div>
+
+
+
+    <main class="container">
+
+
+        <!-- ======================================
+             HERO / PERSONAL BRANDING
+        ======================================= -->
+
+        <header class="hero">
+
+
+            <div class="logo">
+                💧
+            </div>
+
+
+            <h1>
+                Mr. Subedee's
+            </h1>
+
+
+            <p class="brand-title">
+                Daily Water Hydration 💦
+            </p>
+
+
+            <p class="creator">
+                Designed & Developed by
+                <strong>Pradyotan Subedi</strong>
+            </p>
+
+
+            <div class="today">
+
+                <span>
+                    📅
+                </span>
+
+                <span id="today-date">
+                    Today
+                </span>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- ======================================
+             MAIN WATER TRACKER
+        ======================================= -->
+
+        <section class="card water-card">
+
+
+            <div class="card-title">
+
+
+                <div>
+
+                    <span class="small-label">
+                        TODAY'S MISSION
+                    </span>
+
+
+                    <h2>
+                        Stay Hydrated 💦
+                    </h2>
+
+                </div>
+
+
+                <div class="target">
+                    8 💧
+                </div>
+
+
+            </div>
+
+
+
+            <!-- WATER COUNTER -->
+
+            <div class="water-counter">
+
+
+                <div class="big-number">
+
+                    <span id="glasses">
+                        0
+                    </span>
+
+                    <small>
+                        / 8
+                    </small>
+
+                </div>
+
+
+                <p id="water-message">
+                    Let's start your hydration journey! 💧
+                </p>
+
+
+            </div>
+
+
+
+            <!-- PROGRESS -->
+
+            <div class="progress-info">
+
+                <span>
+                    Daily Progress
+                </span>
+
+                <strong id="progress-percent">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="progress-container">
+
+                <div id="progress-bar"></div>
+
+            </div>
+
+
+
+            <!-- DRINK BUTTON -->
+
+            <button
+                class="drink-button"
+                id="drink-button"
+                onclick="drinkWater()"
+            >
+
+                💧 Drink Water
+
+            </button>
+
+
+            <button
+                class="reset-button"
+                onclick="resetWater()"
+            >
+
+                Reset Day
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             QUICK STATS
+        ======================================= -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    💧
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Drank
+                    </span>
+
+
+                    <strong>
+
+                        <span id="stat-glasses">
+                            0
+                        </span>
+
+                        glasses
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🎯
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Remaining
+                    </span>
+
+
+                    <strong>
+
+                        <span id="remaining-glasses">
+                            8
+                        </span>
+
+                        glasses
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🔥
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Streak
+                    </span>
+
+
+                    <strong>
+
+                        <span id="streak">
+                            0
+                        </span>
+
+                        days
+
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             CRAZY MOTIVATION
+        ======================================= -->
+
+        <section class="card motivation-card">
+
+
+            <div class="motivation-icon">
+                🧠
+            </div>
+
+
+            <div>
+
+                <span class="small-label">
+                    REMEMBER THIS
+                </span>
+
+
+                <h2 id="motivation-text">
+                    Your body deserves enough water.
+                </h2>
+
+
+                <p>
+                    Your brain can't run on vibes alone.
+                    Drink some water. 😂💧
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             DAILY SCHEDULE
+        ======================================= -->
+
+        <section class="card schedule-card">
+
+
+            <div class="section-heading">
+
+
+                <div>
+
+                    <span class="small-label">
+                        YOUR DAILY PLAN
+                    </span>
+
+
+                    <h2>
+                        💧 Water Schedule
+                    </h2>
+
+                </div>
+
+
+                <span class="schedule-count">
+                    8 times
+                </span>
+
+
+            </div>
+
+
+
+            <p class="schedule-description">
+
+                Drink your water and tick
+                <strong>✅ Done</strong>
+                after completing each time.
+
+            </p>
+
+
+
+            <div class="schedule">
+
+
+
+                <!-- 7 AM -->
+
+                <div
+                    class="schedule-item"
+                    data-time="7:00 AM"
+                >
+
+                    <div class="schedule-left">
+
+
+                        <div class="schedule-icon">
+                            🌅
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                7:00 AM
+                            </strong>
+
+
+                            <span>
+                                Morning Water
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <label class="check-container">
+
+                        <input
+                            type="checkbox"
+                            class="water-check"
+                            data-index="0"
+                        >
+
+
+                        <span class="checkmark"></span>
+
+
+                        <span class="done-text">
+                            Done
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 9 AM -->
+
+                <div
+                    class="schedule-item"
+                    data-time="9:00 AM"
+                >
+
+                    <div class="schedule-left">
+
+
+                        <div class="schedule-icon">
+                            ☀️
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                9:00 AM
+                            </strong>
+
+
+                            <span>
+                                Morning Hydration
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <label class="check-container">
+
+                        <input
+                            type="checkbox"
+                            class="water-check"
+                            data-index="1"
+                        >
+
+
+                        <span class="checkmark"></span>
+
+
+                        <span class="done-text">
+                            Done
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 11 AM -->
+
+                <div
+                    class="schedule-item"
+                    data-time="11:00 AM"
+                >
+
+                    <div class="schedule-left">
+
+
+                        <div class="schedule-icon">
+                            💦
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                11:00 AM
+                            </strong>
+
+
+                            <span>
+                                Mid-Morning Water
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <label class="check-container">
+
+                        <input
+                            type="checkbox"
+                            class="water-check"
+                            data-index="2"
+                        >
+
+
+                        <span class="checkmark"></span>
+
+
+                        <span class="done-text">
+                            Done
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 1 PM -->
+
+                <div
+                    class="schedule-item"
+                    data-time="1:00 PM"
+                >
+
+                    <div class="schedule-left">
+
+
+                        <div class="schedule-icon">
+                            🍽️
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                1:00 PM
+                            </strong>
+
+
+                            <span>
+                                Lunch Hydration
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <label class="check-container">
+
+                        <input
+                            type="checkbox"
+                            class="water-check"
+                            data-index="3"
+                        >
+
+
+                        <span class="checkmark"></span>
+
+
+                        <span class="done-text">
+                            Done
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 3 PM -->
+
+                <div
+                    class="schedule-item"
+                    data-time="3:00 PM"
+                >
+
+                    <div class="schedule-left">
+
+
+                        <div class="schedule-icon">
+                            🌤️
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                3:00 PM
+                            </strong>
+
+
+                            <span>
+                                Afternoon Water
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <label class="check-container">
+
+                        <input
+                            type="checkbox"
+                            class="water-check"
+                            data-index="4"
+                        >
+
+
+                        <span class="checkmark"></span>
+
+
+                        <span class="done-text">
+                            Done
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 5 PM -->
+
+                <div
+                    class="schedule-item"
+                    data-time="5:00 PM"
+                >
+
+                    <div class="schedule-left">
+
+
+                        <div class="schedule-icon">
+                            🌇
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                5:00 PM
+                            </strong>
+
+
+                            <span>
+                                Evening Hydration
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <label class="check-container">
+
+                        <input
+                            type="checkbox"
+                            class="water-check"
+                            data-index="5"
+                        >
+
+
+                        <span class="checkmark"></span>
+
+
+                        <span class="done-text">
+                            Done
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 7 PM -->
+
+                <div
+                    class="schedule-item"
+                    data-time="7:00 PM"
+                >
+
+                    <div class="schedule-left">
+
+
+                        <div class="schedule-icon">
+                            🌆
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                7:00 PM
+                            </strong>
+
+
+                            <span>
+                                Evening Water
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <label class="check-container">
+
+                        <input
+                            type="checkbox"
+                            class="water-check"
+                            data-index="6"
+                        >
+
+
+                        <span class="checkmark"></span>
+
+
+                        <span class="done-text">
+                            Done
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- 9 PM -->
+
+                <div
+                    class="schedule-item"
+                    data-time="9:00 PM"
+                >
+
+                    <div class="schedule-left">
+
+
+                        <div class="schedule-icon">
+                            🌙
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                9:00 PM
+                            </strong>
+
+
+                            <span>
+                                Before Bed Water
+                            </span>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <label class="check-container">
+
+                        <input
+                            type="checkbox"
+                            class="water-check"
+                            data-index="7"
+                        >
+
+
+                        <span class="checkmark"></span>
+
+
+                        <span class="done-text">
+                            Done
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             CRAZY CAPTIONS
+        ======================================= -->
+
+        <section class="card quotes-card">
+
+
+            <span class="small-label">
+                HYDRATION REALITY CHECK
+            </span>
+
+
+            <h2>
+                💬 Things You Need To Hear
+            </h2>
+
+
+            <div class="quote-list">
+
+
+                <div class="quote">
+                    💧 “Drink water. Your body has been asking nicely.”
+                </div>
+
+
+                <div class="quote">
+                    🧠 “Head hurts? Don't panic. Drink water first.”
+                </div>
+
+
+                <div class="quote">
+                    🔥 “Less excuses. More water.”
+                </div>
+
+
+                <div class="quote">
+                    😂 “Your brain can't run on vibes alone.”
+                </div>
+
+
+                <div class="quote">
+                    💙 “One glass now. Thank yourself later.”
+                </div>
+
+
+                <div class="quote">
+                    🚰 “Sip. Refresh. Repeat.”
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             NOTE FROM PRADYOTAN
+        ======================================= -->
+
+        <section class="card note-card">
+
+
+            <div class="note-top">
+
+                <div class="note-icon">
+                    👨‍💻
+                </div>
+
+
+                <div>
+
+                    <span class="small-label">
+                        A NOTE FROM THE CREATOR
+                    </span>
+
+
+                    <h2>
+                        A Note From Pradyotan
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <p class="note-text">
+
+                I made this little hydration tracker because
+                taking care of yourself starts with the simplest
+                things.
+
+
+                <br><br>
+
+
+                So drink your water, stay healthy,
+                keep learning, and keep moving forward. 💙
+
+
+            </p>
+
+
+            <div class="signature">
+
+                — Pradyotan Subedi ✨
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             REMINDER
+        ======================================= -->
+
+        <section class="card reminder-card">
+
+
+            <div class="reminder-icon">
+                🔔
+            </div>
+
+
+            <div class="reminder-content">
+
+
+                <h2>
+                    Water Reminder
+                </h2>
+
+
+                <p id="reminder-text">
+
+                    We'll remind you when you miss
+                    your scheduled water.
+
+                </p>
+
+
+            </div>
+
+
+            <button
+                onclick="showReminder()"
+                class="reminder-button"
+            >
+
+                Check Now
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             FINAL CREATOR BRANDING
+        ======================================= -->
+
+        <section class="creator-card">
+
+
+            <div class="creator-line">
+                ✦ ✦ ✦
+            </div>
+
+
+            <h2>
+                Mr. Subedee's Daily Water Hydration
+            </h2>
+
+
+            <p>
+                Built with 💧 + HTML + CSS + JavaScript
+            </p>
+
+
+            <strong>
+                Prepared by Pradyotan Subedi
+            </strong>
+
+
+            <span>
+                © 2026 Mr. Subedee's Hydration
+            </span>
+
+
+        </section>
+
+
+
+        <!-- ======================================
+             FOOTER
+        ======================================= -->
+
+        <footer>
+
+            <p>
+                💧 Stay Hydrated. Stay Awesome.
+            </p>
+
+
+            <span>
+                Small sips. Big difference.
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
