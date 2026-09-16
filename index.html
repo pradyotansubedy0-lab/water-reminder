@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daily Water Hydration 💦</title>
+
+    <meta name="theme-color" content="#00a8e8">
+    <meta name="description" content="Mr. Subedee's Daily Water Hydration Reminder">
+
+    <!-- PWA APP CONNECTION -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         APP HEADER
+    ========================== -->
+
+    <header class="top-header">
+
+        <div class="brand">
+            <div class="water-logo">💧</div>
+
+            <div>
+                <h1 id="brandTitle">Mr. Subedee's Daily Water Hydration</h1>
+                <p>Stay hydrated. Stay alive. Stay awesome. 💦</p>
+            </div>
+        </div>
+
+        <button id="settingsBtn" class="settings-btn" type="button">
+            ⚙️ Settings
+        </button>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTAINER
+    ========================== -->
+
+    <main class="container">
+
+
+        <!-- =========================
+             WELCOME / NAME SETUP
+        ========================== -->
+
+        <section id="welcomeScreen" class="welcome-card">
+
+            <div class="welcome-water">💧</div>
+
+            <h2>Welcome to your hydration zone! 😎</h2>
+
+            <p>
+                Forgetting to drink water?
+                Don't worry — I've got you. 😂💦
+            </p>
+
+            <label for="nameInput">What's your name?</label>
+
+            <input
+                type="text"
+                id="nameInput"
+                placeholder="Enter your name..."
+                maxlength="30"
+                autocomplete="name"
+            >
+
+            <button id="startBtn" class="primary-btn" type="button">
+                Let's Go! 🚀💧
+            </button>
+
+            <small>
+                We'll remind you before your body starts complaining. 😭
+            </small>
+
+        </section>
+
+
+        <!-- =========================
+             DASHBOARD
+        ========================== -->
+
+        <section id="dashboard" class="hidden">
+
+
+            <!-- DATE + MISSION -->
+
+            <section class="hero-card">
+
+                <div class="hero-top">
+
+                    <div>
+                        <span class="today-label">TODAY</span>
+
+                        <h2 id="dateDisplay">
+                            Loading date...
+                        </h2>
+
+                        <p id="greeting">
+                            Stay hydrated! 💧
+                        </p>
+                    </div>
+
+                    <div class="hero-drop">
+                        💧
+                    </div>
+
+                </div>
+
+                <div class="mission-box">
+
+                    <div>
+                        <span class="mission-label">
+                            TODAY'S MISSION
+                        </span>
+
+                        <h3>
+                            Stay Hydrated 💦
+                        </h3>
+                    </div>
+
+                    <div class="mission-count">
+                        <strong id="completedCount">0</strong>
+                        <span>/ 16</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 PROGRESS
+            ========================== -->
+
+            <section class="progress-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="mini-label">DAILY PROGRESS</span>
+                        <h2>Hydration Progress 💧</h2>
+                    </div>
+
+                    <div id="percentageText" class="percentage">
+                        0%
+                    </div>
+
+                </div>
+
+                <div class="progress-track">
+                    <div
+                        id="progressBar"
+                        class="progress-bar"
+                        style="width: 0%;"
+                    ></div>
+                </div>
+
+                <div class="progress-stats">
+
+                    <div>
+                        <span>Drank</span>
+                        <strong id="drankText">0 glasses</strong>
+                    </div>
+
+                    <div>
+                        <span>Remaining</span>
+                        <strong id="remainingText">16 glasses</strong>
+                    </div>
+
+                    <div>
+                        <span>Streak 🔥</span>
+                        <strong id="streakText">0 days</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 NEXT REMINDER
+            ========================== -->
+
+            <section class="next-reminder-card">
+
+                <div class="next-icon">
+                    🔔
+                </div>
+
+                <div class="next-info">
+
+                    <span>NEXT WATER REMINDER</span>
+
+                    <h2 id="nextReminder">
+                        Loading...
+                    </h2>
+
+                    <p id="nextReminderMessage">
+                        Get ready to drink some water! 💧
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 WATER SCHEDULE
+            ========================== -->
+
+            <section class="schedule-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="mini-label">
+                            YOUR DAILY SCHEDULE
+                        </span>
+
+                        <h2>
+                            Water Time 💦
+                        </h2>
+                    </div>
+
+                    <span class="schedule-info">
+                        6 AM → 9 PM
+                    </span>
+
+                </div>
+
+                <div id="scheduleList" class="schedule-list">
+                    <!-- JavaScript creates schedule -->
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 REMEMBER THIS
+            ========================== -->
+
+            <section class="remember-card">
+
+                <div class="remember-icon">
+                    🧠💧
+                </div>
+
+                <div>
+                    <h2>REMEMBER THIS</h2>
+
+                    <p>
+                        You don't need to wait until you're thirsty.
+                        Your body needs water throughout the day.
+                        Drink regularly and keep yourself hydrated. 💙
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 HYDRATION REALITY CHECK
+            ========================== -->
+
+            <section class="reality-card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="mini-label">
+                            HYDRATION REALITY CHECK
+                        </span>
+
+                        <h2>
+                            Be honest with yourself 😂
+                        </h2>
+                    </div>
+
+                    <div class="reality-icon">
+                        👀
+                    </div>
+
+                </div>
+
+                <div class="reality-message" id="realityMessage">
+                    Your water bottle is literally watching you. 👀💧
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 CREATOR NOTE
+            ========================== -->
+
+            <section class="creator-card">
+
+                <div class="creator-header">
+
+                    <div class="creator-avatar">
+                        👨‍💻
+                    </div>
+
+                    <div>
+                        <span class="mini-label">
+                            A NOTE FROM THE CREATOR
+                        </span>
+
+                        <h2>
+                            Hey, don't forget your water! 💙
+                        </h2>
+                    </div>
+
+                </div>
+
+                <p>
+                    I made this little reminder because sometimes
+                    we get busy studying, scrolling, gaming or just
+                    doing our own thing — and completely forget water. 😭
+                </p>
+
+                <p>
+                    So whenever you see a reminder from this app,
+                    don't just dismiss it. Take a small break,
+                    drink your water and come back stronger. 💧😎
+                </p>
+
+                <div class="creator-signature">
+                    — Pradyotan Subedi ✨
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 WATER REMINDER STATUS
+            ========================== -->
+
+            <section class="notification-card">
+
+                <div class="notification-icon">
+                    🔔
+                </div>
+
+                <div class="notification-content">
+
+                    <h2>
+                        Water Reminder
+                    </h2>
+
+                    <p>
+                        We'll remind you when you miss your scheduled water.
+                    </p>
+
+                    <div
+                        id="notificationStatus"
+                        class="notification-status"
+                    >
+                        Checking notification permission...
+                    </div>
+
+                </div>
+
+                <button
+                    id="enableNotificationsBtn"
+                    class="secondary-btn"
+                    type="button"
+                >
+                    Enable 🔔
+                </button>
+
+            </section>
+
+
+            <!-- =========================
+                 ACTION BUTTONS
+            ========================== -->
+
+            <section class="action-section">
+
+                <button
+                    id="resetDayBtn"
+                    class="reset-btn"
+                    type="button"
+                >
+                    🔄 Reset Day
+                </button>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         SETTINGS MODAL
+    ========================== -->
+
+    <div id="settingsModal" class="modal hidden">
+
+        <div class="modal-box">
+
+            <button
+                id="closeSettingsBtn"
+                class="close-btn"
+                type="button"
+            >
+                ✕
+            </button>
+
+            <h2>⚙️ Settings</h2>
+
+            <p class="modal-subtitle">
+                Customize your hydration reminders.
+            </p>
+
+
+            <div class="setting-item">
+
+                <div>
+                    <strong>🔔 Notifications</strong>
+                    <p>
+                        Receive water reminders.
+                    </p>
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="notificationToggle"
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+                    <strong>🔊 Reminder Sound</strong>
+                    <p>
+                        Play a small ting-tong sound.
+                    </p>
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="soundToggle"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+                    <strong>😂 Crazy Reminder Mode</strong>
+                    <p>
+                        Use funny and crazy reminders.
+                    </p>
+                </div>
+
+                <label class="switch">
+
+                    <input
+                        type="checkbox"
+                        id="crazyToggle"
+                        checked
+                    >
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+
+            <div class="setting-item">
+
+                <div>
+                    <strong>👤 Change Name</strong>
+                    <p id="currentNameText">
+                        Your current name
+                    </p>
+                </div>
+
+                <button
+                    id="changeNameBtn"
+                    class="small-btn"
+                    type="button"
+                >
+                    Change
+                </button>
+
+            </div>
+
+
+            <div class="quiet-hours">
+
+                🌙 <strong>Quiet Hours</strong>
+
+                <p>
+                    No reminders after 9:00 PM until 6:00 AM.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div
+        id="toast"
+        class="toast"
+        role="status"
+        aria-live="polite"
+    >
+        💧 Nice!
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <h3>
+            Mr. Subedee's Daily Water Hydration 💦
+        </h3>
+
+        <p>
+            Built with 💧 + HTML + CSS + JavaScript
+        </p>
+
+        <p>
+            Designed & Developed by
+            <strong>Pradyotan Subedi</strong>
+        </p>
+
+        <span>
+            Drink water. Take care of yourself. 💙
+        </span>
+
+    </footer>
+
+
+    <!-- MAIN JAVASCRIPT -->
+    <script src="script.js"></script>
+
+
+    <!-- PWA SERVICE WORKER CONNECTION -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("./sw.js")
+                    .then(() => {
+                        console.log("Water Reminder PWA connected 💧");
+                    })
+                    .catch((error) => {
+                        console.error("Service Worker error:", error);
+                    });
+            });
+        }
+    </script>
+
+</body>
+</html>
